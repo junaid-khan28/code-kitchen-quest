@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { ChefHat, Trophy, Star } from 'lucide-react';
+import { ChefHat, Trophy, Star, Coins } from 'lucide-react';
 
 interface GameHeaderProps {
   level: number;
@@ -11,6 +11,7 @@ interface GameHeaderProps {
   maxXp: number;
   badges: number;
   currentChallenge: string;
+  coins?: number;
 }
 
 export const GameHeader: React.FC<GameHeaderProps> = ({
@@ -18,7 +19,8 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
   xp,
   maxXp,
   badges,
-  currentChallenge
+  currentChallenge,
+  coins = 0
 }) => {
   const progressPercentage = (xp / maxXp) * 100;
 
@@ -42,6 +44,11 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
             <div className="flex items-center space-x-2">
               <Trophy className="h-4 w-4 text-yellow-600" />
               <span className="text-sm font-medium">{badges} Badges</span>
+            </div>
+
+            <div className="flex items-center space-x-2 bg-white px-3 py-1 rounded-full shadow-sm">
+              <Coins className="h-4 w-4 text-yellow-600" />
+              <span className="text-sm font-medium">{coins}</span>
             </div>
           </div>
         </div>

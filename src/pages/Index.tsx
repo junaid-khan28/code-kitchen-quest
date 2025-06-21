@@ -11,7 +11,8 @@ const Index = () => {
         xp={150}
         maxXp={300}
         badges={2}
-        currentChallenge="Hello Kitchen"
+        currentChallenge="Drag & Drop Coding"
+        coins={100}
       />
       <GameDashboard />
     </div>
